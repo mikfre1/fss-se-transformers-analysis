@@ -65,6 +65,7 @@ or how severe the problem was. This is only possible by inspecting the changes o
 ### Task 2.4
 #### What can you say about the correlation between the two complexity measures in this repository? For example, if you selected CC and LoC, what can you say  for the statement “Files with more lines of code tend to have higher cyclomatic  complexity”?
 ![Example Image](2_4.png)
+
 Interpretation: positive correlation — files with more LoC tend to have higher CC. (Pearson=0.926, Spearman=0.950)
 
 ### Task 2.5
