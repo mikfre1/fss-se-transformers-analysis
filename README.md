@@ -70,21 +70,31 @@ Interpretation: positive correlation — files with more LoC tend to have higher
 
 ### Task 2.5
 #### A colleague of yours claims that “Files with higher complexity tend to be more defective”. What evidence can you present to support or reject this claim for the selected complexity measures in this repository?
-
+By comparing defect counts per file with complexity metrics (CC and LoC), a positive correlation is observed.
+Files with high CC and high LoC, such as modeling_utils.py, also have many defects.
+This supports the claim that more complex files are more prone to defects, though correlation is not causation. Some high-complexity files may still have few defects due to careful development or extensive testing.
 
 ## Task 3
 
 ### Task 3.1
 #### Calculate the logical coupling for each file pair in the repository. Visualize the 10 most coupled file pairs using a visualization of your choice that effectively conveys the coupling relationships. Select one of these 10 most coupled file pairs and comment on their relationship.
+![Example Image](3_1.png)
 
-
-
+Example: src/transformers/modeling_utils.py ↔ src/transformers/attention.py
+These two files are heavily coupled because modeling_utils.py implements functions that directly rely on attention mechanisms. High logical coupling is expected in this case due to functional dependency, not necessarily a design flaw.
 ### Task 3.2
 #### Repeat the steps of the bullet point above, but consider only file pairs where the one file is a Python test file, i.e., starts with “test ”, and the other is a Python non-test file. How would you explain this type of coupling? Is it a code smell that requires attention and signals potential refactoring opportunities or is it something different?
+![Example Image](3_2.png)
+
+The coupling between test files and source files is normal and healthy. It shows that tests evolve with the code. It is not a code smell. It rather reflects good engineering practice, not something requiring refactoring.
 
 ### Task 3.3
 #### Writing tests is a time-consuming task and developers often omit it, thus, automated test generation tools have been implemented and are widely used. One of the most popular test generation tools for Python is Pynguin, that takes as input a .py file and generates passing tests for that file. Pynguin writes the generated tests to a new file in a separate folder, isolated from the project’s test suite. Suppose that you are tasked with implementing an option for Pynguin to place the tests directly in the project’s test suite, specifically in the test file that is most closely “related” with the input .py file. Discuss at least three (3) implementations for selecting the most “related” test file given a (non-test) .py file. You do not have to implement these options at this stage.
+Name-based matching: Match .py file and test file by naming convention, e.g., utils.py → test_utils.py.
+Import/dependency analysis: Identify test files that import the target module or its classes/functions and place tests there.
+Change history/logical coupling: Use historical commit data to find test files that often change alongside the target .py file.
 
 ### Task 3.4
 #### Select two of the three test placement implementations you proposed above. Where would they place automatically-generated tests for the src/transformers/generation/utils.py file?
-
+Name-based matching: src/transformers/generation/utils.py and tests/transformers/generation/test_utils.py
+Logical coupling: Place tests in the file that historically changes most with utils.py, e.g., tests/transformers/generation/test_generation.py if commits show frequent joint changes.
