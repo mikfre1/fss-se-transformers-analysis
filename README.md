@@ -70,6 +70,7 @@ Interpretation: positive correlation — files with more LoC tend to have higher
 
 ### Task 2.5
 #### A colleague of yours claims that “Files with higher complexity tend to be more defective”. What evidence can you present to support or reject this claim for the selected complexity measures in this repository?
+![Example Image](2_5.png)
 
 By comparing defect counts per file with complexity metrics (CC and LoC), a positive correlation is observed.
 Files with high CC and high LoC, such as modeling_utils.py, also have many defects.
@@ -138,3 +139,5 @@ Generate a Plot showing the occurance of the following Keywords ["fix", "fixes",
 Plot defect related commmits per month. 
 
 Calculate and visualize CC and LoC.
+
+CC and LoC compared to defect counts per file.
