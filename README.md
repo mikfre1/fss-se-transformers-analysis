@@ -2,12 +2,11 @@
 ## Group 8
 
 ## Task 1
-Using pydriller to mine git commits from 2023-01-01 and save as a csv file.
 
 ### Task 1.2
 #### Analyze these messages to detect the presence of specific keywords of your choice related to defect fixes.
 
-Generate a Plot showing the occurance of the following Keywords ["fix", "fixes", "fixed", "bug", "bugs", "issue", "issues", "error", "errors",
+Plot showing the occurance of the following Keywords ["fix", "fixes", "fixed", "bug", "bugs", "issue", "issues", "error", "errors",
 "defect", "defects", "fault", "faults", "hotfix", "patch", "fail", "fails", "failed", "failing", "failure",]
 
 ![Example Image](1_2.png)
@@ -34,7 +33,7 @@ part of the checked-out tag. This explains the sudden drop in defect-related com
 
 The files with the highest numbers of defects are \['src/transformers/modeling_utils.py', 'src/transformers/\_\_init__.py'].
 
-The most effects (33 in the file "modeling_utils.py" were introduced in March 2025.
+The most effects (33 in the file "modeling_utils.py") were introduced in March 2025.
 The high number of bugs could be due to a series of large updates and refactors, including FlashAttention2 support, 
 T5-Encoder changes, and attention module refactors, which probably introduced several defects which were later fixed, 
 which can be seen by the numerous commits with ‘Fix’ in their messages.
@@ -49,7 +48,7 @@ scenario, where false positives are included. The keywords might be used in anot
 Another limitation is that all defects are treated the same, so it is not possible to know what exactly the issue was 
 or how severe the problem was. This is only possible by inspecting the changes or the exact message.
 
-### Task 2
+## Task 2
 
 ### Task 2.1
 #### Select two complexity metrics of your choice.
@@ -99,3 +98,16 @@ Change history/logical coupling: Use historical commit data to find test files t
 #### Select two of the three test placement implementations you proposed above. Where would they place automatically-generated tests for the src/transformers/generation/utils.py file?
 Name-based matching: src/transformers/generation/utils.py and tests/transformers/generation/test_utils.py
 Logical coupling: Place tests in the file that historically changes most with utils.py, e.g., tests/transformers/generation/test_generation.py if commits show frequent joint changes.
+
+
+## LLM Prompts
+Using pydriller to mine git commits from 2023-01-01 and save as a csv file.
+
+Words related to fix, bug, error, issue
+
+Generate a Plot showing the occurance of the following Keywords ["fix", "fixes", "fixed", "bug", "bugs", "issue", "issues", "error", "errors",
+"defect", "defects", "fault", "faults", "hotfix", "patch", "fail", "fails", "failed", "failing", "failure",]
+
+Plot defect related commmits per month. 
+
+Calculate and visualize CC and LoC.
