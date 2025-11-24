@@ -75,7 +75,7 @@ There are some exceptions but overall the trendline and correlation values confi
 
 ### Task 2.5
 #### A colleague of yours claims that “Files with higher complexity tend to be more defective”. What evidence can you present to support or reject this claim for the selected complexity measures in this repository?
-![Example Image](2_5.png)
+![Example Image](2.5.png)
 
 By comparing defect counts per file with complexity metrics (CC and LoC), a positive correlation is observed.
 Files with high CC and high LoC, such as modeling_utils.py, also have many defects.
