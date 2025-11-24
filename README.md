@@ -62,11 +62,16 @@ or how severe the problem was. This is only possible by inspecting the changes o
 #### Visualize the complexity hotspots. The visualization should effectively convey which parts of the code are more complex or change more frequently. Feel free to use any visualization of your choice and explain the rationale behind your decision.
 ![Example Image](2_3.png)
 
+we used a horizontal bar chart sorted by Cyclomatic Complexity because it clearly highlights which files are the most complex in an easy format. Long file paths are readable horizontally, and ranking the bars makes the true complexity hotspots stand out immediately. This helps to quickly see where maintenance risk is highest and where refactoring efforts should be prioritized.
+
+
 ### Task 2.4
 #### What can you say about the correlation between the two complexity measures in this repository? For example, if you selected CC and LoC, what can you say  for the statement “Files with more lines of code tend to have higher cyclomatic  complexity”?
 ![Example Image](2_4.png)
 
-Interpretation: positive correlation — files with more LoC tend to have higher CC. (Pearson=0.926, Spearman=0.950)
+Files with more lines of code tend to have higher cyclomatic complexity, and the data here shows a clear positive correlation.
+As LoC increases, CC also rises because.
+There are some exceptions but overall the trendline and correlation values confirm that bigger files are typically more complex in this repository.
 
 ### Task 2.5
 #### A colleague of yours claims that “Files with higher complexity tend to be more defective”. What evidence can you present to support or reject this claim for the selected complexity measures in this repository?
@@ -139,5 +144,8 @@ Generate a Plot showing the occurance of the following Keywords ["fix", "fixes",
 Plot defect related commmits per month. 
 
 Calculate and visualize CC and LoC.
+<<<<<<< HEAD
 
 CC and LoC compared to defect counts per file.
+=======
+>>>>>>> 2dadf210e5c0aa1f0d1f2b54739227196f61a9a8
