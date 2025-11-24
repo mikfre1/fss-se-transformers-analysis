@@ -144,8 +144,5 @@ Generate a Plot showing the occurance of the following Keywords ["fix", "fixes",
 Plot defect related commmits per month. 
 
 Calculate and visualize CC and LoC.
-<<<<<<< HEAD
 
 CC and LoC compared to defect counts per file.
-=======
->>>>>>> 2dadf210e5c0aa1f0d1f2b54739227196f61a9a8
